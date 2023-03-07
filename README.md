@@ -1,6 +1,6 @@
 # RSNABreast7thPlace
 ## RSNA Screening Mammography Breast Cancer Detection
-The kaggle competition overview is [here](https://www.kaggle.com/competitions/rsna-breast-cancer-detection/overview). This repository is for our 7th solution (Team: luddite&MT) writeup. Short solution summary is [here](https://www.kaggle.com/competitions/rsna-breast-cancer-detection/discussion/391125).
+The kaggle competition overview is [here](https://www.kaggle.com/competitions/rsna-breast-cancer-detection/overview). This repository is for our 7th solution (Team: luddite&MT) writeup. Short solution summary is here([solution summary](https://www.kaggle.com/competitions/rsna-breast-cancer-detection/discussion/391125)).
 
 ## Preparation
 1. Please make sure to put `train.csv` downloaded from kaggle in `data/input`
