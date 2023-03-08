@@ -20,5 +20,5 @@ The kaggle competition overview is [here](https://www.kaggle.com/competitions/rs
    For laterality-level/external dataset/windowing: `config4.yaml`
 
 ## Inference
-- To complete inference faster, we compiled the pytorch models with [Torch-tensorRT](https://pytorch.org/TensorRT/) in advance. I noticed that the compilation did not work as usual for th 'tf' type of EfficientNet due to its dynamic padding function, so I edited the source code and used it. See [here](https://www.kaggle.com/code/masato114/rsna-tf-efficientnetv2s-tensorrt/notebook).
+- To complete inference faster, we compiled the pytorch models with [Torch-tensorRT](https://pytorch.org/TensorRT/) in advance. I noticed that the compilation did not work as usual for the 'tf' type of EfficientNet due to its dynamic padding function, so I edited the source code and used it. See [here](https://www.kaggle.com/code/masato114/rsna-tf-efficientnetv2s-tensorrt/notebook).
 - Full inference code is open as the kaggle notebook. Please see [this](https://www.kaggle.com/code/masato114/2stage-ensemble/notebook).
