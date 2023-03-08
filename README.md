@@ -6,8 +6,11 @@ The kaggle competition overview is [here](https://www.kaggle.com/competitions/rs
 1. Please make sure to put `train.csv` downloaded from kaggle in `data/input`
 2. Please refer to [here](https://www.kaggle.com/code/masato114/rsna-generate-train-images/notebook) to prepare train images with H1520xW912 and put them into `data/input/train_images` directory.
 3. [Option] If you would like to use sigmoid-windowing applied images, please refer to [here](https://www.kaggle.com/code/masato114/rsna-get-windowing-stat/notebook) to get windowing information in advance. If the given information are added on the dataframe from `train.csv` as new columns, `train.csv` of step1 can be replaced by this.
+4. [Option] If you would like to use external dataset, please refer to [VinDr webpage](https://vindr.ai/datasets/mammo) to download corresponding images and annotation file. Make sure to put them in `data/input/external_data` and `data/input`, respectively.
 
 ## Train
+1. Train only using kaggle dataset like below.  
+   `python -u src/train.py configs/config0.yaml`
 
 ## Inference
 - To complete inference faster, we compiled the pytorch models with [Torch-tensorRT](https://pytorch.org/TensorRT/) in advance. I noticed that the compilation did not work as usual for th 'tf' type of EfficientNet due to its dynamic padding function, so I edited the source code and used it. See [here](https://www.kaggle.com/code/masato114/rsna-tf-efficientnetv2s-tensorrt/notebook).
