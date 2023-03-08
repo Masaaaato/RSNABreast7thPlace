@@ -11,6 +11,13 @@ The kaggle competition overview is [here](https://www.kaggle.com/competitions/rs
 ## Train
 1. Train only using kaggle dataset like below.  
    `python -u src/train.py configs/config0.yaml`
+2. Conduct pseudolabeling on external dataset.  
+   `python -u src/external_pseudolabeling.py configs/config0.yaml`
+3. Change the config file as follows according to your purpose.  
+   For breast-level/external dataset/no windowing: `config1.yaml`  
+   For laterality-level/external dataest/no windowing: `config2.yaml`  
+   For breast-level/external dataset/windowing: `config3.yaml`  
+   For laterality-level/external dataset/windowing: `config4.yaml`
 
 ## Inference
 - To complete inference faster, we compiled the pytorch models with [Torch-tensorRT](https://pytorch.org/TensorRT/) in advance. I noticed that the compilation did not work as usual for th 'tf' type of EfficientNet due to its dynamic padding function, so I edited the source code and used it. See [here](https://www.kaggle.com/code/masato114/rsna-tf-efficientnetv2s-tensorrt/notebook).
