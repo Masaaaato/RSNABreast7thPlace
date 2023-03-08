@@ -1,7 +1,7 @@
 # breast-level training, sigmoid-windowing is applied
 VER: '099'
-INPUT_BASE: '../data/input'
-OUTPUT_BASE: '../data/output'
+INPUT_BASE: 'data/input'
+OUTPUT_BASE: 'data/output'
 DEVICE: 'cuda:0'
 SIZE: [1520, 912]
 MEAN: 0.21902776
