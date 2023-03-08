@@ -1,0 +1,24 @@
+# breast-level training, sigmoid-windowing is applied
+VER: '099'
+INPUT_BASE: '../data/input'
+OUTPUT_BASE: '../data/output'
+DEVICE: 'cuda:0'
+SIZE: [1520, 912]
+MEAN: 0.21902776
+STD: 0.2058490367876737
+level: breast
+external: true
+windowing: true
+seed: 10
+batch_size: 8
+lr: 5.0e-5
+n_folds: 4
+epochs: 10
+epochs_warmup: 0
+num_cycles: 0.5
+apex: true
+print_freq: 100
+name: 'tf_efficientnetv2_s'
+# parameters for elastic deformation
+a: 10
+s: 15
