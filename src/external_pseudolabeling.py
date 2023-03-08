@@ -1,3 +1,4 @@
+import sys
 import os
 import gc
 import pickle
@@ -31,8 +32,9 @@ print('torch version:', torch.__version__)
 print('timm version:', timm.__version__)
 
 # load custom function
-from .custom_utils import get_custom_folds, pfbeta, pfbeta_binarized, pr_auc, AverageMeter, asMinutes, timeSince
-from .dataset_utils import MammoDataset, MammoDataset_Lat, MammoDataset_Ext, MammoDataset_Ext_Lat
+sys.path.append('.')
+from custom_utils import get_custom_folds, pfbeta, pfbeta_binarized, pr_auc, AverageMeter, asMinutes, timeSince
+from dataset_utils import MammoDataset, MammoDataset_Lat, MammoDataset_Ext, MammoDataset_Ext_Lat
 
 ### load configuration from .yaml
 def get_args():
@@ -164,4 +166,4 @@ vindr_df = vindr_df.merge(vindr_anno[['image_id', 'laterality', 'view_position',
 vindr_df['prediction_id'] = vindr_df['patient_id'].str.cat(vindr_df['laterality'], sep='_')
 agg_preds = vindr_df[['prediction_id', 'fold0_pred', 'fold1_pred', 'fold2_pred', 'fold3_pred']].groupby('prediction_id').mean().reset_index()
 vindr_df = vindr_df[['patient_id', 'image_id', 'laterality', 'view_position', 'breast_birads', 'breast_density', 'prediction_id']].merge(agg_preds, on='prediction_id').reset_index(drop=True)
-vindr_df.to_csv('../inputs/VinDr_pl_agg.csv')
+vindr_df.to_csv(INPUT_BASE.joinpath('VinDr_pl_agg.csv'))
