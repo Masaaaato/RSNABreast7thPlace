@@ -31,8 +31,9 @@ print('torch version:', torch.__version__)
 print('timm version:', timm.__version__)
 
 # load custom function
-from .custom_utils import get_custom_folds, pfbeta, pfbeta_binarized, pr_auc, AverageMeter, asMinutes, timeSince
-from .dataset_utils import MammoDataset, MammoDataset_Lat, MammoDataset_Ext, MammoDataset_Ext_Lat
+sys.path.append('.')
+from custom_utils import get_custom_folds, pfbeta, pfbeta_binarized, pr_auc, AverageMeter, asMinutes, timeSince
+from dataset_utils import MammoDataset, MammoDataset_Lat, MammoDataset_Ext, MammoDataset_Ext_Lat
 
 ### load configuration from .yaml
 def get_args():
@@ -279,7 +280,7 @@ def train_loop(folds, fold):
 train_df = pd.read_csv(INPUT_BASE.joinpath('train.csv'))
 # cv splitting, grouped by patient_id and stratified by age, implant, machine_id, cancer, biopsy, BIRADS, density, and the num of images
 # get_custom_folds returns train_df with 'fold' column
-train_df = get_custom_folds(train_df)
+train_df = get_custom_folds(train_df, config)
 
 if config.external:
     vindr_df = pd.read_csv(INPUT_BASE.joinpath('VinDr_pl_agg.csv'))
