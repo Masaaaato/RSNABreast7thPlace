@@ -6,7 +6,7 @@ import pandas as pd
 from sklearn.metrics import roc_auc_score, auc, precision_recall_curve
 from iterstrat.ml_stratifiers import MultilabelStratifiedKFold
 
-def get_custom_folds(train_df):
+def get_custom_folds(train_df, config):
     train_df_all = train_df.copy()
 
     # count images per prediction_id
