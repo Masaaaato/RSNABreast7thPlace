@@ -1,7 +1,7 @@
 # laterality-level training, sigmoid-windowing is not applied
 VER: '085'
-INPUT_BASE: '../data/input'
-OUTPUT_BASE: '../data/output'
+INPUT_BASE: 'data/input'
+OUTPUT_BASE: 'data/output'
 DEVICE: 'cuda:0'
 SIZE: [1520, 1520]
 MEAN: 0.3089279
